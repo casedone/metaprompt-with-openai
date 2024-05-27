@@ -2,9 +2,9 @@
 
 ![UI interface](./docs/UI-example.png)
 
-ℹ️ This repo contains materials that were discissed in [PLACEHOLDER](LINK).
+> This repo contains materials that were discussed in [To be announced](LINK).
 
-'metaprompt' is a huge prompt made by Anthropic for the purpose of helping humans write effective prompts. Deep-dive in understanding 'metaprompt' can be found in my blog post [NAME](LINK).
+'metaprompt' is a huge prompt made by Anthropic for the purpose of helping humans write effective prompts. Deep-dive in understanding 'metaprompt' can be found in my blog post ["metaprompt" is a "prompt generator"](https://casedonebyai.substack.com/p/metaprompt-is-a-prompt-generator?utm_source=github&utm_medium=github-readme).
 
 ## Run it
 Assuming you have the right python environment and other required tools. You can simply run:
@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 ## Sharing & Crediting
 
-ℹ️ Feel free to copy and distribute, but we appreciate you giving us credits.
+> Feel free to copy and distribute, but we appreciate you giving us credits.
 
 ## ⛓️Connect with Us:
 
