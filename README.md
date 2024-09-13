@@ -22,7 +22,7 @@ python main.py
 ```shell
 pip install -r requirements.txt
 ```
-- You will need an OpenAI API key because we would use GPT-4o. You simply put your API key in the file `openai_key.txt`.
+- You will need an OpenAI API key because we would use GPT-4o. You simply put your API key in the file `secret/openai_key.txt`.
 
 ## Sharing & Crediting
 
