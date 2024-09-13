@@ -5,7 +5,7 @@ from openai import OpenAI
 import re
 
 # %%
-with open('./openai_key.txt', 'r') as f:
+with open('./secret/openai_key.txt', 'r') as f:
     openai_key = f.read()
     
 client = OpenAI(api_key=openai_key)
@@ -85,7 +85,7 @@ def extract_variables(prompt):
 
 ####### HERE
 
-def run(task, inputs):
+def run(model, task, inputs):
     if task == "":
         output = "Error: Task cannot be empty."
     else:
@@ -93,7 +93,7 @@ def run(task, inputs):
         prompt = process_task_field(task)
         history = create_message(prompt, assistant_partial)
         response = client.chat.completions.create(
-            model="gpt-4o",
+            model=model,
             max_tokens=4096,
             messages=history,
             temperature=0
@@ -107,16 +107,19 @@ def run(task, inputs):
 with gr.Blocks() as demo:
     gr.Markdown("""Prompt Generator
                    ================
-                   This is powered by **metaprompt** from Anthropic and OpenAI's **GPT-4o**.
+                   This is powered by **metaprompt** from Anthropic and OpenAI's models.
                    How to use it:
+                   - Select a model (GPT-4o seems to work best).
                    - Write your task in the Task box.
                    - Provide necessary inputs if the task needs in the Inputs box.
                    
                     **Example**
-                    
                     - Task: Find sentiment of the customer review
                     - Inputs customer review
                 """)
+    gr.Markdown("## Model Selection")
+    model = gr.Radio(choices=['gpt-4o', 'gpt-4o-mini'], value='gpt-4o')
+    gr.Markdown("## Task")
     with gr.Row() as r1:
         with gr.Column() as r1c1:
             task = gr.Text(label="Task", lines=5, placeholder="create a structure of my blog about workout for me")
@@ -124,6 +127,7 @@ with gr.Blocks() as demo:
             inputs = gr.Text(label="Inputs (comma seperated)", lines=5, placeholder= "initial idea, specific terms")
     with gr.Row() as r2:
         bttn = gr.Button(value="Run", variant="primary")
+    gr.Markdown("## Results")
     with gr.Row() as r3:
         with gr.Column(scale=1) as r3c1:
             gr.Markdown("⬇️ **Instructions Structure**")
@@ -135,11 +139,9 @@ with gr.Blocks() as demo:
         output_raw = gr.Text(label="⬇️ Raw output ")
         
     bttn.click(fn=run,
-               inputs=[task, inputs],
+               inputs=[model, task, inputs],
                outputs=[inst_struc, inst, output_raw])
         
         
 if __name__ == "__main__":
-    demo.launch(share=True)
-
-
+    demo.launch()
