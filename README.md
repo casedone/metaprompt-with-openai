@@ -2,7 +2,7 @@
 
 ![UI interface](./docs/UI-example.png)
 
-> This repo contains materials that were discussed in [Metaprompt-Master Prompt to Create Better Prompts for Gen AI Use Cases]([LINK](https://www.youtube.com/watch?v=GuTQ8LD0XWs)).
+> This repo contains materials that were discussed in [Metaprompt-Master Prompt to Create Better Prompts for Gen AI Use Cases](https://www.youtube.com/watch?v=GuTQ8LD0XWs).
 
 'metaprompt' is a huge prompt made by Anthropic for the purpose of helping humans write effective prompts. Deep-dive in understanding 'metaprompt' can be found in my blog post ["metaprompt" is a "prompt generator"](https://casedonebyai.substack.com/p/metaprompt-is-a-prompt-generator?utm_source=github&utm_medium=github-readme).
 
